@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "btr-free"
+version = "0.1.0"
+description = "TUI-Tool zur Analyse von Btrfs-Snapshot-Speicherbelegung"
+requires-python = ">=3.11"  # nixpkgs: python312Packages.textual
+dependencies = [
+    "textual>=0.50",
+]
+
+[project.scripts]
+btr-free = "btr_free.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["btr_free"]
